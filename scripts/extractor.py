@@ -35,5 +35,32 @@ class DataExtractor():
                 chunked_list.append(list[i:i+chunk_size])
 
         return chunked_list
+    def prepare_data_for_pandas(self,columns,all_data,id_prefix)->tuple:
+        try:
+            trajectory_cols=columns[:4]
+            trajectory_rows=[]
 
+            timed_vehicle_cols=['track_id']+columns[4:]
+            timed_vehicle_rows=[]
+
+            for row in all_data:
+                try:
+                    items=row.replace('\n','').split(';')
+                    items[0]=f"{id_prefix}_{items[0]}"
+                    trajectory_rows.append(items[:4])
+                    timed_vehicle_rows.extend(self.chunk_list(items[4:],6,items[0]))
+                except Exception as e:
+                    # the try excepts here are for the airflow
+                    try:
+                        self.logger.error(f"Failed preparing data for pands at row {row}: {e}")
+                    except:
+                        pass
+            
+            return (trajectory_cols,trajectory_rows),(timed_vehicle_cols,timed_vehicle_rows)
+        except Exception as e:
+            # the try excepts here are for the airflow
+            try:
+                self.logger.error(f"Failed to prepare data for pandas: {e}")
+            except:
+                pass
     
