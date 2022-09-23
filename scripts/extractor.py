@@ -24,4 +24,16 @@ class DataExtractor():
             except:
                 pass
             sys.exit(1)
+    def chunk_list(self,list,chunk_size,default_first_val=None)->list:
+        chunked_list=[]
+        for i in range(0, len(list), chunk_size):
+            if default_first_val:
+                values=[default_first_val]
+                values.extend(list[i:i+chunk_size])
+                chunked_list.append(values)
+            else:
+                chunked_list.append(list[i:i+chunk_size])
+
+        return chunked_list
+
     
