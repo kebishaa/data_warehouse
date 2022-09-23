@@ -37,10 +37,17 @@ def extract_data(ti):
     ti.xcom_push(key="vehicle",value=vehicle_file_name)
 def create_table():
     db_util.create_table()
-    
+
 def populate_table(ti):
     trajectory_file_name = ti.xcom_pull(key="trajectory",task_ids='extract_from_file')
     vehicle_file_name = ti.xcom_pull(key="vehicle",task_ids='extract_from_file')
     # trajectory_data,vehicle_data=combined_df['trajectory'], combined_df['vehicle']
     db_util.insert_to_table(trajectory_file_name, 'trajectories',from_file=True)
     db_util.insert_to_table(vehicle_file_name, 'vehicles',from_file=True)
+
+def clear_memory(ti):
+    trajectory_file_name = ti.xcom_pull(key="trajectory",task_ids='extract_from_file')
+    vehicle_file_name = ti.xcom_pull(key="vehicle",task_ids='extract_from_file')
+
+    os.remove(f'../temp_storage/{trajectory_file_name}')
+    os.remove(f'../temp_storage/{vehicle_file_name}')
