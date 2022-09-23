@@ -51,3 +51,14 @@ def clear_memory(ti):
 
     os.remove(f'../temp_storage/{trajectory_file_name}')
     os.remove(f'../temp_storage/{vehicle_file_name}')
+
+# Specifing the default_args
+default_args = {
+    'owner': 'Kibatu',
+    'depends_on_past': False,
+    'email': ['kbkibatu@gmail.com'],
+    'email_on_failure': False,
+    'email_on_retry': False,
+    'retries': 2,
+    'retry_delay': timedelta(minutes=5)
+}
