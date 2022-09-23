@@ -63,7 +63,7 @@ class DataExtractor():
                 self.logger.error(f"Failed to prepare data for pandas: {e}")
             except:
                 pass
-     def prepare_data_frame(self,trajectory_data:tuple,timed_vehicle_data:tuple):
+    def prepare_data_frame(self,trajectory_data:tuple,timed_vehicle_data:tuple):
 
         try:
             trajectory_cols,trajectory_rows=trajectory_data
