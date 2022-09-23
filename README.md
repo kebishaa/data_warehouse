@@ -1,4 +1,4 @@
-# data_warehouse
+# data_warehouse_dbt_airflow
 ![data_warehouse](https://miro.medium.com/max/1400/1*C30qzgp75f8ACyqvlxTbfA.png)
 
 # About
