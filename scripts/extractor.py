@@ -63,4 +63,21 @@ class DataExtractor():
                 self.logger.error(f"Failed to prepare data for pandas: {e}")
             except:
                 pass
+     def prepare_data_frame(self,trajectory_data:tuple,timed_vehicle_data:tuple):
+
+        try:
+            trajectory_cols,trajectory_rows=trajectory_data
+            timed_vehicle_cols,timed_vehicle_rows=timed_vehicle_data
+
+            trajectory_data=pd.DataFrame(columns=trajectory_cols,data=trajectory_rows)
+            timed_vehicle_data=pd.DataFrame(columns=timed_vehicle_cols,data=timed_vehicle_rows)
+
+            return trajectory_data,timed_vehicle_data
+
+        except Exception as e:
+            # the try excepts here are for the airflow
+            try:
+                self.logger.error(f"Failed to prepare data frame: {e}")
+            except:
+                pass
     
