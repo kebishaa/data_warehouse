@@ -1,5 +1,4 @@
 
-`.env` Shoud contain the following
 ```bash
 REDASH_HOST=http://localhost/redash
 PYTHONUNBUFFERED=0
@@ -16,5 +15,5 @@ Then run
 ```bash
 docker-compose run --rm server create_db 
 docker-compose up -d
-# your redash should be running on port 5000
+
 ```
