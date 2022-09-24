@@ -12,7 +12,7 @@ The data warehouse should take into account future needs, organise data such tha
 # Data
 The data for the challenge https://open-traffic.epfl.ch/index.php/downloads/#1599047632450-ebe509c8-1330
 
-# The major Tools that we will use for this project are:-
+# The major Tools that use for this project are:-
 Airflow
 DBT
 Postgres
