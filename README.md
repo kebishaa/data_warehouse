@@ -10,3 +10,4 @@ A city traffic department wants to collect traffic data using swarm UAVs (drones
 The data warehouse should take into account future needs, organise data such that a number of downstream projects query the data efficiently. You should use the Extract Load Transform (ELT) framework using DBT.  Unlike the Extract, Transform, Load (ETL), the ELT framework helps analytic engineers in the city traffic department setup transformation workflows on a need basis.
 
 # Data
+The data for the challenge https://open-traffic.epfl.ch/index.php/downloads/#1599047632450-ebe509c8-1330
