@@ -1,14 +1,16 @@
 import pandas as pd
-import sys 
 from logger import Logger
-from  datetime import datetime
+import sys
+from datetime import datetime
 class DataExtractor():
+    
     def __init__(self)->None:
         try:
             self.logger=Logger().get_app_logger()
             self.logger.info('Data extractor object Initialized')
         except:
             pass
+    
     def get_columns_and_rows(self,file_path)->tuple:
         try:
             with open(f'../data/{file_path}','r') as f:
@@ -24,6 +26,7 @@ class DataExtractor():
             except:
                 pass
             sys.exit(1)
+    
     def chunk_list(self,list,chunk_size,default_first_val=None)->list:
         chunked_list=[]
         for i in range(0, len(list), chunk_size):
@@ -35,6 +38,7 @@ class DataExtractor():
                 chunked_list.append(list[i:i+chunk_size])
 
         return chunked_list
+
     def prepare_data_for_pandas(self,columns,all_data,id_prefix)->tuple:
         try:
             trajectory_cols=columns[:4]
@@ -108,4 +112,3 @@ class DataExtractor():
                 pass
     def separate_data(self,file_name:str,chunk_size:int = 100):
         pass
-    
