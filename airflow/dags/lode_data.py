@@ -1,12 +1,12 @@
 from datetime import timedelta
 
 from airflow import DAG
-from airflow.operators.bash_operator import BashOperator
-from airflow.operators.mysql_operator import MySqlOperator
+from airflow.operators.python import PythonOperator
+from airflow.providers.mysql.operators.mysql import MySqlOperator
 from airflow.utils.dates import datetime
 from airflow.utils.dates import timedelta
 from airflow.utils.dates import days_ago
-from airflow.operators.email_operator import EmailOperator
+from airflow.operators.email import EmailOperator
 
 default_args = {
     "owner": "kebishaa",
