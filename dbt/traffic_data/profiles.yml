@@ -1,0 +1,19 @@
+traffic_data:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: ymhviow-tr02372
+
+      # User/password auth
+      user: KEBISHAA1
+      password: ••••••••
+
+      role: ACCOUNTADMIN
+      database: traffic_data
+      warehouse: execute_dw
+      schema: public
+      threads: 10
+      client_session_keep_alive: False
+      query_tag: 
+     
