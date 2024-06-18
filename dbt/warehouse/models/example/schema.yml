@@ -1,0 +1,25 @@
+
+version: 2
+
+
+models:
+  - name: fast_vehicles
+    description: "Query fast vehicles"
+    
+  - name: vehicles_summary
+    description: "A summary of vehicles by distance and speed"
+  
+  - name: fast_vehicles_summary
+    description: "A summary of vehicles by distance and speed"
+
+  - name: timely_summary
+    description: "A summary of vehicles by speed"
+
+  - name: speed_timely_summary
+    description: "A summary of vehicles by distance and speed"
+
+  - name: lat_timely_summary
+    description: "A summary of vehicles by distance and speed"
+
+  - name: lon_timely_summary
+    description: "A summary of vehicles by distance and speed"
