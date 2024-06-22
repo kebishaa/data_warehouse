@@ -19,3 +19,8 @@ The data warehouse should take into account future needs, organise data such tha
 
 ![DBT DOCS](https://github.com/kebishaa/data_warehouse_dbt_airflow_postgress/assets/102953496/64f80ed0-76b2-4915-87a7-f88e169290e2)
 
+
+### Teck Stacks
+![DBT DOCS](https://github.com/kebishaa/data_warehouse_dbt_airflow_postgress/assets/102953496/2e69961b-86e3-4916-9bde-a0f7b7cc7294)
+
+
